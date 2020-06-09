@@ -35,6 +35,7 @@ function check ()
 	else
 		{
 			alert('Confirm password and new password not matched');
+			cp.value = np.value = "";
 			return false;
 		}
 }

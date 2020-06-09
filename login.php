@@ -25,7 +25,7 @@
 				}
 			else
 				{
-					echo "<script> alert('Done'); </script>";
+					echo "<script> alert('Username or password is incurrect'); </script>";
 				}
 		}
 	}
@@ -44,7 +44,7 @@
 		<label> Password : </label> <input type="password" name="password" required>
 		<br>
 		<br>
-	<input type="submit" name="submit" name="Login"> <input type="reset" name = "Reset" value ="Reset">
+	<input type="submit" name="submit" name="Login" value = "Login"> <input type="reset" name = "Reset" value ="Reset">
 	</form>
 	</center>
 		<a href = "update_password.php"> <ul> <li> Change Password </li> </ol> </a>
