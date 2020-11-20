@@ -1,27 +1,29 @@
-body
-{
-	background-color:silver;	
-}
 form
 {
-	background-color:cyan;
-	padding:80px;
-	width : 90%;
-	margin-left:30px;
-	border:2px dotted;
-}
-label
-{
-	font-family:Times New Roman;
-	font-weight:bolder;
-	color:red;
+	margin-top: 20px;
+	border-radius: 20px;
+
 }
 .btn
-{	
-margin-top:25px;
-width:100px;
-color:blue;
-height:40px;	
-font-weight:bolder;
-color:white;
+{
+	background-color: rgb(19, 190, 33); /* Blue background */
+	border: none; /* Remove borders */
+	color: white; /* White text */
+	padding: 12px 16px; /* Some padding */
+	font-size: 16px; /* Set a font size */
+	cursor: pointer; /* Mouse pointer on hover */
 }
+  
+  /* Darker background on mouse-over */
+.btn:hover 
+{
+	background-color: rgb(32, 177, 68);
+}
+
+.doctor_show
+{
+	border: 2px solid !important;
+	border-radius: 10px !important;
+	background-color: rgb(239, 241, 75) !important;
+}
+

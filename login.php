@@ -12,15 +12,21 @@
 		{
 			$name = $_POST['name'];
 			$password = $_POST['password'];
-			$sql = "select * from admin";
+			$sql = "SELECT * FROM admin";
 			$result = mysqli_query($con,$sql);
 			$row = mysqli_fetch_assoc($result);
 			$c_name = $row['name'];
 			$c_password = $row['password'];
+			$clinic_name = $row['clinic_name'];
+			$clinic_address = $row['address'];
+
 			if(($name == $c_name) and ($password == $c_password))
 				{
 					session_start();
 					$_SESSION['user'] = $name;
+					$_SESSION['clinic_name'] = $clinic_name;
+					$_SESSION['clinic_name'] = $clinic_name;
+					$_SESSION['address'] = $clinic_address;
 					echo "<script> location.href = 'menu.php'</script>";
 				}
 			else
