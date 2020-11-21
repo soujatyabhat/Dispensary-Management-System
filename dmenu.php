@@ -34,6 +34,10 @@
 			<div class = "col-lg-3" style = "margin-left:30%;"> <a href = "doctor_add.php"> <img src = "icons/consulting.png" width="150px" height = "150px" title = "Add New Doctor"> </a></div> 
 			<div class = "col-lg-3"> <a href = "doctor_show.php"> <img src = "icons/doctor.png" width="150px" height = "150px" title = "Show all records of exsisting doctors"> </a> </div> 
 		</div>
+		<div class = "row">
+			<div class = "col-lg-3" style = "margin-left:31%;"> <p> Add New Doctor </p> </div> 
+			<div class = "col-lg-3"  style = "margin-left:2%;">  <p> Show Doctor </p> </div> 
+		</div>
 	</div>
 <ul> <li> <a href = "menu.php"> Main Menu </a> </li> </ul>
 </body>

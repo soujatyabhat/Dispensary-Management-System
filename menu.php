@@ -36,6 +36,11 @@
 			<div class = "col-lg-3"> <a href = "#"> <img src = "icons/stethoscope.png" width="150px" height = "150px" title = "Display all records of exsisting appointment"> </a> </div> 
 			<div class = "col-lg-3"> <a href = "dmenu.php"> <img src = "icons/doctor_in_menu.png" width="150px" height = "150px" title = "Doctor's Segment"> </a> </div> 
 		</div>
+		<div class = "row">
+			<div class = "col-lg-3" style = "margin-left:17%;"> <p> Create Appointments </p> </div> 
+			<div class = "col-lg-3"  style = "margin-left:1%;">  <p> Show Appointments </p> </div> 
+			<div class = "col-lg-3"  style = "margin-left:2%;">  <p> Doctor Details </p> </div> 
+		</div>
 	</div>
 </body>
 </html>
