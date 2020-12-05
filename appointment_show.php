@@ -8,7 +8,7 @@
 	<link rel="stylesheet" type = "text/css" href="style/doctor.css">
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 	<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
-	<title> Current Doctors</title>
+	<title> Patient Appoint </title>
 	<style>
 	.doctor_show
 	{
@@ -29,19 +29,19 @@
 				$.ajax
 				({
 					type: "POST",
-					url: "include/doctor_delete.php",
+					url: "include/delete_appointment.php",
 					data: $("form").serialize(),
 					success: function(result)
 					{
 						if (result == 1)
 							{
-								swal("Good job!", "Data has saved!", "success");
+								swal("Good job!", "Database Updated!", "success");
 								location.reload();
 
 							}
 					else
 							{
-								swal("Allash!", "Data has not saved!", "error");
+								swal("Allash!", "Database has not Updated", "error");
 							}
 					}
 				})
@@ -70,7 +70,7 @@
 <div class = "container">
 <?php
       
-	  $sql = "SELECT * FROM doc";
+	  $sql = "SELECT * FROM appoint";
 	  $result = mysqli_query($con,$sql);
 	  $count = mysqli_num_rows($result);
 
@@ -81,23 +81,16 @@
 ?>
 
 		<div class = "doctor_show">
-				<b> Name : </b> <?php echo $row['d_name']?>
+				<b> ID: </b> <?php echo $row['a_id']?>
 				<br>
-				<b> Specialist in : </b> <?php echo $row['d_specialist']?>
+				<b> Patient Name : </b> <?php echo $row['p_name']?>
 				<br>
-				<b> About : </b> <?php echo $row['d_about']?>
+				<b> Time : </b> <?php echo $row['a_time']?>
 				<br>
-				<b> Phone Number : </b> <?php echo $row['d_phone']?>
-				<br>
-				<b> Email ID :  </b> <?php echo $row['d_email']?>
-				<br>
-				<b> Shift : </b> <?php echo $row['d_shift']?>
-				<br>
-				<b> Linkedin : </b> <a href = "<?php echo $row['d_social_link']?>">  <?php echo $row['d_social_link']?> </a>
-				<br>
+				<b> Date : </b> <?php echo $row['a_date']?>
 				<br>
 				<form method="POST">
-					<input type = "hidden" name = "id" value = "<?php echo $row['d_id']?>">
+					<input type = "hidden" name = "id" value = "<?php echo $row['a_id']?>">
 					<button class = "btn" id = "submit" style = "background-color: rgb(255, 20, 52); color:white;"> <i class="fa fa-trash-o"></i> Delete </button>
 				</form>
 				
@@ -113,13 +106,13 @@
 		<center>
 			<img src = "icons/sad.png">
 			<br>
-			<h1 class = "display-3"> No Doctor Appoint Yet </h1>
+			<h1 class = "display-3"> No Patient Appoint Yet </h1>
 		</center>
 <?php	
 	}
 	?>
 </table>
 </div>
-<ul> <li> <a href = "dmenu.php"> Doctor Menu </a> </ul> </li>
+<ul> <li> <a href = "menu.php"> Main Menu </a> </ul> </li>
 </body>
 </html>

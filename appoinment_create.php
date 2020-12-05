@@ -15,7 +15,7 @@
 			event.preventDefault();
         	$.ajax({
             	type: "POST",
-            	url: "include/doctor_save.php",
+            	url: "include/appointment_save.php",
             	data: $("#doctor").serialize(),
             	success: function(result)
             	{
@@ -27,7 +27,7 @@
 					   
 				   else
 				  	    {
-								 swal("Allash!", "Data has not saved!", "error");
+								 swal("Alash!", "Data has not saved!", "error");
 						}
             	}
         })
@@ -47,50 +47,51 @@
 
 <div class="form-row mb-4">
 	<div class="col">
-		<!-- First name -->
-		<input type="text" id="defaultRegisterFormFirstName" class="form-control" placeholder="First name" name = "fname">
+		<!-- Choose Shift -->
+		<select id="defaultRegisterFormEmail" class="form-control sm-4" name = "doctor">
+			<option value="" disabled selected> Checkup Shift  </option>
+			<?php
+					require_once 'connection.php';
+					
+					$sql = "SELECT * FROM doc";
+					$result = mysqli_query($con,$sql);
+					
+					while($row = mysqli_fetch_assoc($result))
+					{
+			?>
+						<option> <?php echo $row['d_name']?> </option>
+			<?php
+					}
+			?>
+		</select>
 	</div>
 	<div class="col">
 		<!-- Last name -->
-		<input type="text" id="defaultRegisterFormLastName" class="form-control" placeholder="Last name" name = "lname"> 
+		<input type="text" id="defaultRegisterFormLastName" class="form-control" placeholder="Name" name = "name"> 
 	</div>
 </div>
 
+<div class="form-row mb-4">
+	<div class="col">
+		<input type="number" id="defaultRegisterFormLastName" class="form-control" placeholder="Phone Number" name = "phone"> 
+	</div>
+	<div class="col">
+		<!-- Last name -->
+		<input type="date" id="defaultRegisterFormLastName" class="form-control" placeholder="Date" name = "date"> 
+	</div>
+	<div class="col">
+		<!-- Last name -->
+		<input type="time" id="defaultRegisterFormLastName" class="form-control" placeholder="Date" name = "time"> 
+	</div>
+</div>
 
-<!-- Specialist-->
-<input type="text" id="defaultRegisterPhonePassword" class="form-control" placeholder="Specialist" aria-describedby="defaultRegisterFormPhoneHelpBlock" name = "speacial">
-
-<br>
-
-<!-- Phone -->
-<input type="text" id="defaultRegisterFormEmail" class="form-control mb-4" placeholder="Phone" name = "phone">
-
-<!-- address-->
-<input type="text" id="defaultRegisterFormEmail" class="form-control mb-4" placeholder="Home Address" name = "address">
-
-
-<!-- E-mail -->
-<input type="email" id="defaultRegisterFormEmail" class="form-control mb-4" placeholder="E-mail" name = "email">
-
-<!-- About  -->
-<textarea cols = "20" rows = "3"  class="form-control mb-4" placeholder="About" name = "about"></textarea>
-
-<!-- Social link -->
-<input type="url" id="defaultRegisterFormEmail" class="form-control mb-4" placeholder="Linkedin Link" name = "link">
-
-<!-- Choose Shift -->
-<select id="defaultRegisterFormEmail" class="form-control sm-4" name = "shift">
-	<option value="" disabled selected> Checkup Shift  </option>
-	<option> Morning </option>
-	<option> Evening </option>
-</select>
 
 <br>
 <!-- Sign up button -->
 <button class="btn" type = "submit" class="btn" id = "submit"> <i class="fa fa-save"></i> Submit </button>
 <button class="btn" type="reset"  style = "background-color: rgb(255, 20, 52)"><i class="fa fa-trash-o"></i> Clear </button>
 <br>
-<ul style = "float:left;"> <li> <a href = "dmenu.php"> Doctor Menu </a> </li> </ul>
+<ul style = "float:left;"> <li> <a href = "menu.php"> Main Menu </a> </li> </ul>
 <br>
 <hr>
 </form>
